@@ -19,8 +19,12 @@ export const createPlayer = (): void => {
 };
 
 export const createFood = (): void => {
-  game.food.position.x = Math.floor(Math.random() * game.map.height - 1);
-  game.food.position.y = Math.floor(Math.random() * game.map.width - 1);
+  game.food.position.x = Math.floor(
+    Math.random() * (1 * game.map.height - 2) + 1
+  );
+  game.food.position.y = Math.floor(
+    Math.random() * (1 * game.map.width - 2) + 1
+  );
 };
 
 export const createBullet = (): void => {
@@ -29,5 +33,5 @@ export const createBullet = (): void => {
     y: Math.floor(Math.random() * game.map.width - 1),
   };
   // @ts-ignore
-  game.bullets.push(newBullet);
+  game.bullets.items.push(newBullet);
 };

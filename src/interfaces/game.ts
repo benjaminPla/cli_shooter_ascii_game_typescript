@@ -4,7 +4,11 @@ export interface ICoordinates {
 }
 
 export interface IGame {
-  bullets: ICoordinates[] | [];
+  bullets: {
+    items: ICoordinates[] | [];
+    spawnSpeed: number;
+    canSpawn: boolean;
+  };
   food: {
     position: ICoordinates;
   };

@@ -2,8 +2,8 @@ import game from "../game/game";
 import { createBullet } from "../game/gameSetup";
 import { endGame } from "../utils/endGame";
 
-const bulletsMechanics = (): void => {
-  game.bullets.forEach((bullet, index) => {
+export const bulletsMechanics = (): void => {
+  game.bullets.items.forEach((bullet, index) => {
     if (
       game.player.position.x === bullet.x &&
       game.player.position.y === bullet.y
@@ -11,10 +11,16 @@ const bulletsMechanics = (): void => {
       endGame();
     }
     if (bullet.x > game.map.height) {
-      game.bullets.splice(index, 1);
+      game.bullets.items.splice(index, 1);
     }
     bullet.x++;
   });
 };
 
-export default bulletsMechanics;
+export let bulletSpawnIntervalId: NodeJS.Timeout;
+
+export const setupBulletSpawnInterval = (): void => {
+  bulletSpawnIntervalId = setInterval(() => {
+    createBullet();
+  }, game.bullets.spawnSpeed);
+};

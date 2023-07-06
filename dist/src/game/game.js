@@ -1,7 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const game = {
-    bullets: [],
+    bullets: {
+        items: [],
+        spawnSpeed: 1000,
+        canSpawn: true,
+    },
     food: {
         position: {
             x: 0,

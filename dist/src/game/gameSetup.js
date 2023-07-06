@@ -23,8 +23,8 @@ const createPlayer = () => {
 };
 exports.createPlayer = createPlayer;
 const createFood = () => {
-    game_1.default.food.position.x = Math.floor(Math.random() * game_1.default.map.height - 1);
-    game_1.default.food.position.y = Math.floor(Math.random() * game_1.default.map.width - 1);
+    game_1.default.food.position.x = Math.floor(Math.random() * (1 * game_1.default.map.height - 2) + 1);
+    game_1.default.food.position.y = Math.floor(Math.random() * (1 * game_1.default.map.width - 2) + 1);
 };
 exports.createFood = createFood;
 const createBullet = () => {
@@ -33,6 +33,6 @@ const createBullet = () => {
         y: Math.floor(Math.random() * game_1.default.map.width - 1),
     };
     // @ts-ignore
-    game_1.default.bullets.push(newBullet);
+    game_1.default.bullets.items.push(newBullet);
 };
 exports.createBullet = createBullet;

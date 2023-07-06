@@ -1,7 +1,11 @@
 import { IGame } from "../interfaces/game";
 
 const game: IGame = {
-  bullets: [],
+  bullets: {
+    items: [],
+    spawnSpeed: 1000,
+    canSpawn: true,
+  },
   food: {
     position: {
       x: 0,

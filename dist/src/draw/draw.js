@@ -18,7 +18,7 @@ const draw = () => {
                 game_1.default.food.position.y === tileIndex) {
                 return game_1.default.sprites.food;
             }
-            if (game_1.default.bullets.find((bullet) => bullet.x === rowIndex && bullet.y === tileIndex)) {
+            if (game_1.default.bullets.items.find((bullet) => bullet.x === rowIndex && bullet.y === tileIndex)) {
                 return game_1.default.sprites.bullets;
             }
             if (tile.x === 0 || tile.x === game_1.default.map.height - 1) {
@@ -35,10 +35,9 @@ const draw = () => {
     process.stdout.write(`Points: ${game_1.default.points}\n`);
     process.stdout.write(`${(0, endGame_1.showPlayedTime)()}\n`);
     process.stdout.write(map.join("\n"));
-    // process.stdout.write(
-    // JSON.stringify({
-    // bullets: game.bullets,
-    // })
-    // );
+    process.stdout.write(JSON.stringify({
+        bulletsSpawnSpeed: game_1.default.bullets.spawnSpeed,
+        bulletsCanSpawn: game_1.default.bullets.canSpawn,
+    }));
 };
 exports.default = draw;

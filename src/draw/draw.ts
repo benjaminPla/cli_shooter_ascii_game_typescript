@@ -23,7 +23,7 @@ const draw = (): void => {
             return game.sprites.food;
           }
           if (
-            game.bullets.find(
+            game.bullets.items.find(
               (bullet) => bullet.x === rowIndex && bullet.y === tileIndex
             )
           ) {
@@ -46,11 +46,12 @@ const draw = (): void => {
   process.stdout.write(`Points: ${game.points}\n`);
   process.stdout.write(`${showPlayedTime()}\n`);
   process.stdout.write(map.join("\n"));
-  // process.stdout.write(
-  // JSON.stringify({
-  // bullets: game.bullets,
-  // })
-  // );
+  process.stdout.write(
+    JSON.stringify({
+      bulletsSpawnSpeed: game.bullets.spawnSpeed,
+      bulletsCanSpawn: game.bullets.canSpawn,
+    })
+  );
 };
 
 export default draw;
