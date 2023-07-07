@@ -7,6 +7,7 @@ const game: IGame = {
     spawnSpeed: 1000,
     spawnSpeedTrigger: 10,
     spawnSpeedDowngrade: 100,
+    speed: 500,
   },
   food: {
     position: {
@@ -17,9 +18,9 @@ const game: IGame = {
   },
   frames: 30,
   map: {
-    width: 64,
     height: 32,
     tiles: [],
+    width: 64,
   },
   player: {
     position: {

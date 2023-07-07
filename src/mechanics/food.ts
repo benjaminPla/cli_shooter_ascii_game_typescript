@@ -1,7 +1,7 @@
 import game from "../game/game";
 import { createFood } from "../game/gameSetup";
 import {
-  setupBulletSpawnInterval,
+  bulletSpawnInterval,
   bulletSpawnIntervalId,
 } from "../mechanics/bullets";
 
@@ -24,6 +24,6 @@ export const eatFood = (): void => {
     clearInterval(bulletSpawnIntervalId);
     game.bullets.spawnSpeed -= game.bullets.spawnSpeedDowngrade;
     game.bullets.canSpawn = false;
-    setupBulletSpawnInterval();
+    bulletSpawnInterval();
   }
 };

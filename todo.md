@@ -1,8 +1,10 @@
-- **idea** add difficult upgrade transition | spawning a row of bullets with some kind of draw
-- add safe zone | where the food do not spawn
-- **idea** add trace of the bullet | trace before spawn and disappear
-- rename variables
-- improve modulized code | make it more intuitive
-- improve player movement
-- add big bullet
-- control bullet movement speed
+- [] **idea** add difficult upgrade transition | spawning a row of bullets with some kind of draw
+- [x] add safe zone | where the food do not spawn
+- [] **idea** add trace of the bullet | trace before spawn and disappear
+- [] rename variables
+- [] improve modulized code | make it more intuitive
+- [] improve player movement
+- [] add big bullet
+- [x] control bullet movement speed
+- [] change game.bullets.speed in some level
+- [] add [start menu, info, credits, transitions]

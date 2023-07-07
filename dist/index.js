@@ -16,9 +16,12 @@ const bullets_1 = require("./src/mechanics/bullets");
 setInterval(() => {
     (0, draw_1.default)();
     (0, food_1.eatFood)();
-    (0, bullets_1.bulletsMechanics)();
+    (0, bullets_1.bulletHit)();
 }, 1000 / game_1.default.frames);
-(0, bullets_1.setupBulletSpawnInterval)();
+(0, bullets_1.bulletSpawnInterval)();
+setInterval(() => {
+    (0, bullets_1.bulletsMovement)();
+}, game_1.default.bullets.speed);
 setInterval(() => {
     game_1.default.time++;
 }, 1000);

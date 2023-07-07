@@ -10,6 +10,7 @@ export interface IGame {
     spawnSpeed: number;
     spawnSpeedTrigger: number;
     spawnSpeedDowngrade: number;
+    speed: number;
   };
   food: {
     position: ICoordinates;

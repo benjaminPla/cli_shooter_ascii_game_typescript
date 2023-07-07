@@ -21,7 +21,7 @@ const eatFood = () => {
         clearInterval(bullets_1.bulletSpawnIntervalId);
         game_1.default.bullets.spawnSpeed -= game_1.default.bullets.spawnSpeedDowngrade;
         game_1.default.bullets.canSpawn = false;
-        (0, bullets_1.setupBulletSpawnInterval)();
+        (0, bullets_1.bulletSpawnInterval)();
     }
 };
 exports.eatFood = eatFood;

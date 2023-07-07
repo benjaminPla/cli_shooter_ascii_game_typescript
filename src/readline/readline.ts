@@ -1,6 +1,7 @@
 import game from "../game/game";
 import readline from "readline";
 import { showPlayedTime } from "../utils/endGame";
+import { endGame } from "../utils/endGame";
 
 export const clearScreen = () => {
   readline.cursorTo(process.stdout, 0, 0);
@@ -15,11 +16,7 @@ export const readlineSetup = () => {
 
   process.stdin.on("keypress", (input: any, key: any) => {
     if (key.name === "escape") {
-      clearScreen();
-      console.log(`Points: ${game.points}`);
-      console.log(showPlayedTime());
-      console.log("\nThanks for playing.");
-      process.exit(0);
+      endGame();
     } else if (key.name === "w" && game.player.position.x > 1) {
       game.player.position.x--;
     } else if (

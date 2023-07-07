@@ -9,8 +9,9 @@ import {
 import draw from "./src/draw/draw";
 import { eatFood } from "./src/mechanics/food";
 import {
-  bulletsMechanics,
-  setupBulletSpawnInterval,
+  bulletsMovement,
+  bulletHit,
+  bulletSpawnInterval,
 } from "./src/mechanics/bullets";
 
 createMap();
@@ -21,10 +22,14 @@ readlineSetup();
 setInterval(() => {
   draw();
   eatFood();
-  bulletsMechanics();
+  bulletHit();
 }, 1000 / game.frames);
 
-setupBulletSpawnInterval();
+bulletSpawnInterval();
+
+setInterval(() => {
+  bulletsMovement();
+}, game.bullets.speed);
 
 setInterval(() => {
   game.time++;

@@ -19,11 +19,7 @@ const readlineSetup = () => {
     }
     process.stdin.on("keypress", (input, key) => {
         if (key.name === "escape") {
-            (0, exports.clearScreen)();
-            console.log(`Points: ${game_1.default.points}`);
-            console.log((0, endGame_1.showPlayedTime)());
-            console.log("\nThanks for playing.");
-            process.exit(0);
+            (0, endGame_1.endGame)();
         }
         else if (key.name === "w" && game_1.default.player.position.x > 1) {
             game_1.default.player.position.x--;
