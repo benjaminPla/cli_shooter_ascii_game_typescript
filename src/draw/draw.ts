@@ -39,6 +39,13 @@ const draw = (): void => {
           if (tile.x === safeZoneMapY && tile.y % 2 === 0) {
             return "-";
           }
+          if (
+            tile.x < safeZoneMapY &&
+            game.bullets.isWaveActive &&
+            game.time % 2 === 0
+          ) {
+            return ".";
+          }
           return " ";
         }
       );

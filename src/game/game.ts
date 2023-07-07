@@ -7,7 +7,10 @@ const game: IGame = {
     spawnSpeed: 1000,
     spawnSpeedTrigger: 10,
     spawnSpeedDowngrade: 100,
-    speed: 500,
+    speed: 200,
+    waveInterval: 60 * 1000,
+    isWaveActive: false,
+    waveWarningTime: 6000,
   },
   food: {
     position: {

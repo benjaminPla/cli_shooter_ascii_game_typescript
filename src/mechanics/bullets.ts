@@ -1,4 +1,5 @@
 import game from "../game/game";
+import { ICoordinates } from "../interfaces/game";
 import { createBullet } from "../game/gameSetup";
 import { endGame } from "../utils/endGame";
 
@@ -28,4 +29,31 @@ export const bulletSpawnInterval = (): void => {
   bulletSpawnIntervalId = setInterval(() => {
     createBullet();
   }, game.bullets.spawnSpeed);
+};
+
+export const bulletsWave = (): void => {
+  for (let i = 0; i < game.map.width; i++) {
+    if (i % 2 === 0) {
+      const distance = Math.abs(i - game.map.width + 1);
+      const bulletX = -distance;
+      if (i <= Math.floor(game.map.width / 2)) {
+        const newBullet: ICoordinates = {
+          x: bulletX,
+          y: i,
+        };
+        // @ts-ignore
+        game.bullets.items.push(newBullet);
+      } else {
+        const newBullet: ICoordinates = {
+          x: -i + 1,
+          y: i,
+        };
+        // @ts-ignore
+        game.bullets.items.push(newBullet);
+      }
+    }
+  }
+  setTimeout(() => {
+    game.bullets.isWaveActive = false;
+  }, game.bullets.waveWarningTime);
 };

@@ -12,6 +12,7 @@ import {
   bulletsMovement,
   bulletHit,
   bulletSpawnInterval,
+  bulletsWave,
 } from "./src/mechanics/bullets";
 
 createMap();
@@ -34,3 +35,8 @@ setInterval(() => {
 setInterval(() => {
   game.time++;
 }, 1000);
+
+setInterval(() => {
+  bulletsWave();
+  game.bullets.isWaveActive = true;
+}, game.bullets.waveInterval);

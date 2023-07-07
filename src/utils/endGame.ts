@@ -1,5 +1,4 @@
 import game from "../game/game";
-import { clearScreen } from "../readline/readline";
 
 export const showPlayedTime = (): string => {
   const seconds = game.time % 60;
@@ -14,7 +13,7 @@ export const showPlayedTime = (): string => {
 };
 
 export const endGame = (): void => {
-  clearScreen();
+  console.log("\n\nYou loose.\n");
   console.log(`Points: ${game.points}`);
   console.log(showPlayedTime());
   console.log("\nThanks for playing.");

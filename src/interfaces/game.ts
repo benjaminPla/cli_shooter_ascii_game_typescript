@@ -11,6 +11,9 @@ export interface IGame {
     spawnSpeedTrigger: number;
     spawnSpeedDowngrade: number;
     speed: number;
+    waveInterval: number;
+    isWaveActive: boolean;
+    waveWarningTime: number;
   };
   food: {
     position: ICoordinates;
