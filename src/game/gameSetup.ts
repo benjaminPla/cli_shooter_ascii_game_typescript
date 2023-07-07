@@ -30,7 +30,7 @@ export const createFood = (): void => {
 export const createBullet = (): void => {
   const newBullet: ICoordinates = {
     x: 0,
-    y: Math.floor(Math.random() * game.map.width - 1),
+    y: Math.floor(Math.random() * (1 * game.map.width - 1) + 1),
   };
   // @ts-ignore
   game.bullets.items.push(newBullet);

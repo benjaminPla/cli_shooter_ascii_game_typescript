@@ -46,12 +46,12 @@ const draw = (): void => {
   process.stdout.write(`Points: ${game.points}\n`);
   process.stdout.write(`${showPlayedTime()}\n`);
   process.stdout.write(map.join("\n"));
-  process.stdout.write(
-    JSON.stringify({
-      bulletsSpawnSpeed: game.bullets.spawnSpeed,
-      bulletsCanSpawn: game.bullets.canSpawn,
-    })
-  );
+  // process.stdout.write(
+  // JSON.stringify({
+  // bulletsSpawnSpeed: game.bullets.spawnSpeed,
+  // bulletsCanSpawn: game.bullets.canSpawn,
+  // })
+  // );
 };
 
 export default draw;

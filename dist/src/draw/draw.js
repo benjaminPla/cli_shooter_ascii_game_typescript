@@ -35,9 +35,11 @@ const draw = () => {
     process.stdout.write(`Points: ${game_1.default.points}\n`);
     process.stdout.write(`${(0, endGame_1.showPlayedTime)()}\n`);
     process.stdout.write(map.join("\n"));
-    process.stdout.write(JSON.stringify({
-        bulletsSpawnSpeed: game_1.default.bullets.spawnSpeed,
-        bulletsCanSpawn: game_1.default.bullets.canSpawn,
-    }));
+    // process.stdout.write(
+    // JSON.stringify({
+    // bulletsSpawnSpeed: game.bullets.spawnSpeed,
+    // bulletsCanSpawn: game.bullets.canSpawn,
+    // })
+    // );
 };
 exports.default = draw;
