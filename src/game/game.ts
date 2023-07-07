@@ -6,6 +6,7 @@ const game: IGame = {
     items: [],
     spawnSpeed: 1000,
     spawnSpeedTrigger: 10,
+    spawnSpeedDowngrade: 100,
   },
   food: {
     position: {

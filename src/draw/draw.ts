@@ -42,9 +42,7 @@ const draw = (): void => {
     }
   );
 
-  process.stdout.write("Press Esc to exit.\n");
-  process.stdout.write(`Points: ${game.points}\n`);
-  process.stdout.write(`${showPlayedTime()}\n`);
+  process.stdout.write(`Press Esc to exit.\nPoints: ${game.points} | ${showPlayedTime()}\n\n`);
   process.stdout.write(map.join("\n"));
   // process.stdout.write(
   // JSON.stringify({

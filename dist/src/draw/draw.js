@@ -31,9 +31,7 @@ const draw = () => {
         });
         return tiles.join("");
     });
-    process.stdout.write("Press Esc to exit.\n");
-    process.stdout.write(`Points: ${game_1.default.points}\n`);
-    process.stdout.write(`${(0, endGame_1.showPlayedTime)()}\n`);
+    process.stdout.write(`Press Esc to exit.\nPoints: ${game_1.default.points} | ${(0, endGame_1.showPlayedTime)()}\n\n`);
     process.stdout.write(map.join("\n"));
     // process.stdout.write(
     // JSON.stringify({

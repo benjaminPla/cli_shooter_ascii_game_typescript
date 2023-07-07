@@ -9,6 +9,7 @@ export interface IGame {
     items: ICoordinates[] | [];
     spawnSpeed: number;
     spawnSpeedTrigger: number;
+    spawnSpeedDowngrade: number;
   };
   food: {
     position: ICoordinates;

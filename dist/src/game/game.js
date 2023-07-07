@@ -4,8 +4,9 @@ const game = {
     bullets: {
         canSpawn: true,
         items: [],
-        spawnSpeed: 1000,
-        spawnSpeedTrigger: 10,
+        spawnSpeed: 100,
+        spawnSpeedTrigger: 1,
+        spawnSpeedDowngrade: 100,
     },
     food: {
         position: {
