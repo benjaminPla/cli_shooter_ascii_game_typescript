@@ -18,21 +18,23 @@ const readlineSetup = () => {
         process.stdin.setRawMode(true);
     }
     process.stdin.on("keypress", (input, key) => {
-        if (key.name === "escape") {
+        if (key.name === game_1.default.controlls.exit) {
             (0, endGame_1.endGame)();
         }
-        else if (key.name === "w" && game_1.default.player.position.x > 1) {
+        else if (key.name === game_1.default.controlls.player.up &&
+            game_1.default.player.position.x > 1) {
             game_1.default.player.position.x--;
         }
-        else if (key.name === "s" &&
+        else if (key.name === game_1.default.controlls.player.down &&
             game_1.default.player.position.x < game_1.default.map.height - 2) {
             game_1.default.player.position.x++;
         }
-        else if (key.name === "d" &&
+        else if (key.name === game_1.default.controlls.player.right &&
             game_1.default.player.position.y < game_1.default.map.width - 2) {
             game_1.default.player.position.y++;
         }
-        else if (key.name === "a" && game_1.default.player.position.y > 1) {
+        else if (key.name === game_1.default.controlls.player.left &&
+            game_1.default.player.position.y > 1) {
             game_1.default.player.position.y--;
         }
     });

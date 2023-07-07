@@ -15,21 +15,27 @@ export const readlineSetup = () => {
   }
 
   process.stdin.on("keypress", (input: any, key: any) => {
-    if (key.name === "escape") {
+    if (key.name === game.controlls.exit) {
       endGame();
-    } else if (key.name === "w" && game.player.position.x > 1) {
+    } else if (
+      key.name === game.controlls.player.up &&
+      game.player.position.x > 1
+    ) {
       game.player.position.x--;
     } else if (
-      key.name === "s" &&
+      key.name === game.controlls.player.down &&
       game.player.position.x < game.map.height - 2
     ) {
       game.player.position.x++;
     } else if (
-      key.name === "d" &&
+      key.name === game.controlls.player.right &&
       game.player.position.y < game.map.width - 2
     ) {
       game.player.position.y++;
-    } else if (key.name === "a" && game.player.position.y > 1) {
+    } else if (
+      key.name === game.controlls.player.left &&
+      game.player.position.y > 1
+    ) {
       game.player.position.y--;
     }
   });

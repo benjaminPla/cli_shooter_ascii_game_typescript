@@ -8,3 +8,4 @@
 - [x] control bullet movement speed
 - [] change game.bullets.speed in some level
 - [] add [start menu, info, credits, transitions]
+- [] add movements keys menu

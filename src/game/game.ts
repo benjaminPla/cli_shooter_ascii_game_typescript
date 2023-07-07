@@ -12,6 +12,15 @@ const game: IGame = {
     isWaveActive: false,
     waveWarningTime: 6000,
   },
+  controlls: {
+    exit: "escape",
+    player: {
+      up: "w",
+      down: "s",
+      right: "d",
+      left: "a",
+    },
+  },
   food: {
     position: {
       x: 0,

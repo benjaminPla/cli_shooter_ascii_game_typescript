@@ -10,7 +10,16 @@ const game = {
         speed: 200,
         waveInterval: 60 * 1000,
         isWaveActive: false,
-        waveWarningTime: 5000,
+        waveWarningTime: 6000,
+    },
+    controlls: {
+        exit: "escape",
+        player: {
+            up: "w",
+            down: "s",
+            right: "d",
+            left: "a",
+        },
     },
     food: {
         position: {

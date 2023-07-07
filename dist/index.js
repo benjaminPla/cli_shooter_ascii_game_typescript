@@ -28,5 +28,4 @@ setInterval(() => {
 setInterval(() => {
     (0, bullets_1.bulletsWave)();
     game_1.default.bullets.isWaveActive = true;
-}, 20000);
-// }, game.bullets.waveInterval);
+}, game_1.default.bullets.waveInterval);

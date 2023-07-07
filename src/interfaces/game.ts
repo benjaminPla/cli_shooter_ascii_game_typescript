@@ -15,6 +15,15 @@ export interface IGame {
     isWaveActive: boolean;
     waveWarningTime: number;
   };
+  controlls: {
+    exit: string;
+    player: {
+      up: string;
+      down: string;
+      right: string;
+      left: string;
+    };
+  };
   food: {
     position: ICoordinates;
     safeZonePercentage: number;
