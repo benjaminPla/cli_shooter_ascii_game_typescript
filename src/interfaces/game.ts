@@ -6,13 +6,14 @@ export interface ICoordinates {
 export interface IGame {
   bullets: {
     canSpawn: boolean;
+    isWaveActive: boolean;
     items: ICoordinates[] | [];
+    minSpawnSpeed: number;
     spawnSpeed: number;
-    spawnSpeedTrigger: number;
     spawnSpeedDowngrade: number;
+    spawnSpeedTrigger: number;
     speed: number;
     waveInterval: number;
-    isWaveActive: boolean;
     waveWarningTime: number;
   };
   controlls: {

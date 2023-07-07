@@ -17,9 +17,12 @@ const eatFood = () => {
     if (game_1.default.points % game_1.default.bullets.spawnSpeedTrigger === 0 &&
         game_1.default.bullets.canSpawn &&
         game_1.default.points !== 0 &&
-        game_1.default.bullets.spawnSpeed >= 100) {
+        game_1.default.bullets.spawnSpeed > game_1.default.bullets.minSpawnSpeed) {
         clearInterval(bullets_1.bulletSpawnIntervalId);
         game_1.default.bullets.spawnSpeed -= game_1.default.bullets.spawnSpeedDowngrade;
+        if (game_1.default.bullets.spawnSpeed < game_1.default.bullets.minSpawnSpeed) {
+            game_1.default.bullets.spawnSpeed = game_1.default.bullets.minSpawnSpeed;
+        }
         game_1.default.bullets.canSpawn = false;
         (0, bullets_1.bulletSpawnInterval)();
     }

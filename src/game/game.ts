@@ -3,13 +3,14 @@ import { IGame } from "../interfaces/game";
 const game: IGame = {
   bullets: {
     canSpawn: true,
+    isWaveActive: false,
     items: [],
+    minSpawnSpeed: 100,
     spawnSpeed: 1000,
-    spawnSpeedTrigger: 10,
-    spawnSpeedDowngrade: 100,
+    spawnSpeedDowngrade: 250,
+    spawnSpeedTrigger: 1,
     speed: 200,
     waveInterval: 60 * 1000,
-    isWaveActive: false,
     waveWarningTime: 6000,
   },
   controlls: {

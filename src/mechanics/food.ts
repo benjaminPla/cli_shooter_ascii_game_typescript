@@ -19,10 +19,15 @@ export const eatFood = (): void => {
     game.points % game.bullets.spawnSpeedTrigger === 0 &&
     game.bullets.canSpawn &&
     game.points !== 0 &&
-    game.bullets.spawnSpeed >= 100
+    game.bullets.spawnSpeed > game.bullets.minSpawnSpeed
   ) {
     clearInterval(bulletSpawnIntervalId);
     game.bullets.spawnSpeed -= game.bullets.spawnSpeedDowngrade;
+
+    if (game.bullets.spawnSpeed < game.bullets.minSpawnSpeed) {
+      game.bullets.spawnSpeed = game.bullets.minSpawnSpeed;
+    }
+
     game.bullets.canSpawn = false;
     bulletSpawnInterval();
   }
