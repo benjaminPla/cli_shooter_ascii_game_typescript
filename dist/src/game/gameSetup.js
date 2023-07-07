@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createBullet = exports.createFood = exports.createPlayer = exports.createMap = void 0;
 const game_1 = __importDefault(require("./game"));
+const safeZone_1 = require("../utils/safeZone");
 const createMap = () => {
     const tiles = [];
     for (let i = 0; i < game_1.default.map.height; i++) {
@@ -23,14 +24,15 @@ const createPlayer = () => {
 };
 exports.createPlayer = createPlayer;
 const createFood = () => {
-    game_1.default.food.position.x = Math.floor(Math.random() * (1 * game_1.default.map.height - 2) + 1);
-    game_1.default.food.position.y = Math.floor(Math.random() * (1 * game_1.default.map.width - 2) + 1);
+    const maxHeight = game_1.default.map.height - 2;
+    game_1.default.food.position.x = Math.floor(Math.random() * (maxHeight - safeZone_1.safeZoneMapY) + safeZone_1.safeZoneMapY);
+    game_1.default.food.position.y = Math.floor(Math.random() * (game_1.default.map.width - 2) + 1);
 };
 exports.createFood = createFood;
 const createBullet = () => {
     const newBullet = {
         x: 0,
-        y: Math.floor(Math.random() * (1 * game_1.default.map.width - 1) + 1),
+        y: Math.floor(Math.random() * (game_1.default.map.width - 1 - 1) + 1),
     };
     // @ts-ignore
     game_1.default.bullets.items.push(newBullet);

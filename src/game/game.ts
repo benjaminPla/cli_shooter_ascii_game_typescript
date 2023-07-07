@@ -13,6 +13,7 @@ const game: IGame = {
       x: 0,
       y: 0,
     },
+    safeZonePercentage: 30,
   },
   frames: 30,
   map: {

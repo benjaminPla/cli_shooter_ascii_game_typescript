@@ -3,3 +3,6 @@
 - **idea** add trace of the bullet | trace before spawn and disappear
 - rename variables
 - improve modulized code | make it more intuitive
+- improve player movement
+- add big bullet
+- control bullet movement speed

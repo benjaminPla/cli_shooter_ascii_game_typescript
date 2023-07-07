@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const game_1 = __importDefault(require("../game/game"));
 const readline_1 = require("../readline/readline");
 const endGame_1 = require("../utils/endGame");
+const safeZone_1 = require("../utils/safeZone");
 const draw = () => {
     (0, readline_1.clearScreen)();
     const map = game_1.default.map.tiles.map((row, rowIndex) => {
@@ -27,17 +28,17 @@ const draw = () => {
             if (tile.y === 0 || tile.y === game_1.default.map.width - 1) {
                 return game_1.default.sprites.wall.vertical;
             }
+            if (tile.x === safeZone_1.safeZoneMapY && tile.y % 2 === 0) {
+                return "-";
+            }
             return " ";
         });
         return tiles.join("");
     });
     process.stdout.write(`Press Esc to exit.\nPoints: ${game_1.default.points} | ${(0, endGame_1.showPlayedTime)()}\n\n`);
     process.stdout.write(map.join("\n"));
-    // process.stdout.write(
-    // JSON.stringify({
-    // bulletsSpawnSpeed: game.bullets.spawnSpeed,
-    // bulletsCanSpawn: game.bullets.canSpawn,
-    // })
-    // );
+    process.stdout.write(JSON.stringify({
+        x: game_1.default.bullets.spawnSpeed,
+    }));
 };
 exports.default = draw;

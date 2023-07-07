@@ -2,6 +2,7 @@ import game from "../game/game";
 import { clearScreen } from "../readline/readline";
 import { ICoordinates } from "../interfaces/game";
 import { showPlayedTime } from "../utils/endGame";
+import { safeZoneMapY } from "../utils/safeZone";
 
 const draw = (): void => {
   clearScreen();
@@ -35,6 +36,9 @@ const draw = (): void => {
           if (tile.y === 0 || tile.y === game.map.width - 1) {
             return game.sprites.wall.vertical;
           }
+          if (tile.x === safeZoneMapY && tile.y % 2 === 0) {
+            return "-";
+          }
           return " ";
         }
       );
@@ -42,12 +46,13 @@ const draw = (): void => {
     }
   );
 
-  process.stdout.write(`Press Esc to exit.\nPoints: ${game.points} | ${showPlayedTime()}\n\n`);
+  process.stdout.write(
+    `Press Esc to exit.\nPoints: ${game.points} | ${showPlayedTime()}\n\n`
+  );
   process.stdout.write(map.join("\n"));
   // process.stdout.write(
   // JSON.stringify({
-  // bulletsSpawnSpeed: game.bullets.spawnSpeed,
-  // bulletsCanSpawn: game.bullets.canSpawn,
+  // x: game.bullets.spawnSpeed,
   // })
   // );
 };

@@ -13,6 +13,7 @@ export interface IGame {
   };
   food: {
     position: ICoordinates;
+    safeZonePercentage: number;
   };
   frames: number;
   map: {

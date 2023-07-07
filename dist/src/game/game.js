@@ -4,8 +4,8 @@ const game = {
     bullets: {
         canSpawn: true,
         items: [],
-        spawnSpeed: 100,
-        spawnSpeedTrigger: 1,
+        spawnSpeed: 1000,
+        spawnSpeedTrigger: 10,
         spawnSpeedDowngrade: 100,
     },
     food: {
@@ -13,6 +13,7 @@ const game = {
             x: 0,
             y: 0,
         },
+        safeZonePercentage: 30,
     },
     frames: 30,
     map: {
