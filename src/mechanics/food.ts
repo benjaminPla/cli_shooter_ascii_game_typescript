@@ -15,10 +15,14 @@ export const eatFood = (): void => {
     game.bullets.canSpawn = true;
   }
 
-  if (game.points % 3 === 0 && game.bullets.canSpawn && game.points !== 0) {
+  if (
+    game.points % game.bullets.spawnSpeedTrigger === 0 &&
+    game.bullets.canSpawn &&
+    game.points !== 0
+  ) {
     clearInterval(bulletSpawnIntervalId);
     game.bullets.spawnSpeed -= 500;
     game.bullets.canSpawn = false;
-    setupBulletSpawnInterval()
+    setupBulletSpawnInterval();
   }
 };

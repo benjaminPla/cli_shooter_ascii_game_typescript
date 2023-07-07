@@ -10,8 +10,7 @@ import draw from "./src/draw/draw";
 import { eatFood } from "./src/mechanics/food";
 import {
   bulletsMechanics,
-  // setupBulletSpawnInterval,
-  // bulletSpawnIntervalId
+  setupBulletSpawnInterval,
 } from "./src/mechanics/bullets";
 
 createMap();
@@ -25,11 +24,7 @@ setInterval(() => {
   bulletsMechanics();
 }, 1000 / game.frames);
 
-setInterval(() => {
-  createBullet();
-}, game.bullets.spawnSpeed);
-
-// setupBulletSpawnInterval();
+setupBulletSpawnInterval();
 
 setInterval(() => {
   game.time++;

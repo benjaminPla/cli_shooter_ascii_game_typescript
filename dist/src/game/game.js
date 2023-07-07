@@ -2,9 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const game = {
     bullets: {
+        canSpawn: true,
         items: [],
         spawnSpeed: 1000,
-        canSpawn: true,
+        spawnSpeedTrigger: 10,
     },
     food: {
         position: {

@@ -5,9 +5,10 @@ export interface ICoordinates {
 
 export interface IGame {
   bullets: {
+    canSpawn: boolean;
     items: ICoordinates[] | [];
     spawnSpeed: number;
-    canSpawn: boolean;
+    spawnSpeedTrigger: number;
   };
   food: {
     position: ICoordinates;

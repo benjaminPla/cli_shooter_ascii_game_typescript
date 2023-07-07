@@ -18,10 +18,7 @@ setInterval(() => {
     (0, food_1.eatFood)();
     (0, bullets_1.bulletsMechanics)();
 }, 1000 / game_1.default.frames);
-setInterval(() => {
-    (0, gameSetup_1.createBullet)();
-}, game_1.default.bullets.spawnSpeed);
-// setupBulletSpawnInterval();
+(0, bullets_1.setupBulletSpawnInterval)();
 setInterval(() => {
     game_1.default.time++;
 }, 1000);
