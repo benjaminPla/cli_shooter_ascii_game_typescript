@@ -1,10 +1,9 @@
 import game from "../game/game";
 import { ICoordinates } from "../interfaces/game";
-import { createBullet } from "../game/gameSetup";
 import { endGame } from "../utils/endGame";
 
 export const bulletHit = (): void => {
-  game.bullets.items.forEach((bullet, index) => {
+  game.bullets.items.forEach((bullet) => {
     if (
       game.player.position.x === bullet.x &&
       game.player.position.y === bullet.y

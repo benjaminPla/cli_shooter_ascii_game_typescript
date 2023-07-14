@@ -1,8 +1,6 @@
 import game from "../game/game";
 import readline from "readline";
-import { showPlayedTime } from "../utils/endGame";
 import { endGame } from "../utils/endGame";
-// import { bulletsMovementSpeedIntervalCallback } from "../intervals/bullets";
 
 export const clearScreen = () => {
   readline.cursorTo(process.stdout, 0, 0);
@@ -15,14 +13,7 @@ export const readlineSetup = () => {
     process.stdin.setRawMode(true);
   }
 
-  process.stdin.on("keypress", (input: any, key: any) => {
-    // if (key.name === "k") {
-    // clearInterval(game.intervals.bullets.movementSpeed);
-    // game.intervals.bullets.movement = setInterval(
-    // bulletsMovementIntervalCallback,
-    // 1000
-    // );
-    // }
+  process.stdin.on("keypress", (_: any, key: any) => {
     if (key.name === game.controlls.exit) {
       endGame();
     } else if (

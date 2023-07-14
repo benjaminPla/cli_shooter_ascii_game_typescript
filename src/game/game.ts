@@ -8,7 +8,7 @@ const game: IGame = {
     minSpawnSpeed: 100,
     spawnSpeed: 1000,
     spawnSpeedDowngrade: 250,
-    spawnSpeedTrigger: 1,
+    spawnSpeedTrigger: 10,
     movementSpeed: 200,
     waveInterval: 60 * 1000,
     waveWarningTime: 6000,
