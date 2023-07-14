@@ -12,3 +12,4 @@
 - [] add final boss
 - [] check map limits concistency
 - [] add odd game.map.width and game.map.height values when creating the map
+- [] modulize all intervals

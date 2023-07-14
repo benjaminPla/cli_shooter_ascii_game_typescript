@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.eatFood = void 0;
 const game_1 = __importDefault(require("../game/game"));
 const gameSetup_1 = require("../game/gameSetup");
-const bullets_1 = require("../mechanics/bullets");
+const intervals_1 = require("../intervals/intervals");
 const eatFood = () => {
     if (game_1.default.player.position.x === game_1.default.food.position.x &&
         game_1.default.player.position.y === game_1.default.food.position.y) {
@@ -18,13 +18,13 @@ const eatFood = () => {
         game_1.default.bullets.canSpawn &&
         game_1.default.points !== 0 &&
         game_1.default.bullets.spawnSpeed > game_1.default.bullets.minSpawnSpeed) {
-        clearInterval(bullets_1.bulletSpawnIntervalId);
+        clearInterval(game_1.default.intervals.bullets.spawn);
         game_1.default.bullets.spawnSpeed -= game_1.default.bullets.spawnSpeedDowngrade;
         if (game_1.default.bullets.spawnSpeed < game_1.default.bullets.minSpawnSpeed) {
             game_1.default.bullets.spawnSpeed = game_1.default.bullets.minSpawnSpeed;
         }
         game_1.default.bullets.canSpawn = false;
-        (0, bullets_1.bulletSpawnInterval)();
+        game_1.default.intervals.bullets.spawn = setInterval(intervals_1.bulletsSpawnIntervalCallback, game_1.default.bullets.spawnSpeed);
     }
 };
 exports.eatFood = eatFood;

@@ -1,9 +1,6 @@
 import game from "../game/game";
 import { createFood } from "../game/gameSetup";
-import {
-  bulletSpawnInterval,
-  bulletSpawnIntervalId,
-} from "../mechanics/bullets";
+import { bulletsSpawnIntervalCallback } from "../intervals/intervals";
 
 export const eatFood = (): void => {
   if (
@@ -21,7 +18,7 @@ export const eatFood = (): void => {
     game.points !== 0 &&
     game.bullets.spawnSpeed > game.bullets.minSpawnSpeed
   ) {
-    clearInterval(bulletSpawnIntervalId);
+    clearInterval(game.intervals.bullets.spawn);
     game.bullets.spawnSpeed -= game.bullets.spawnSpeedDowngrade;
 
     if (game.bullets.spawnSpeed < game.bullets.minSpawnSpeed) {
@@ -29,6 +26,9 @@ export const eatFood = (): void => {
     }
 
     game.bullets.canSpawn = false;
-    bulletSpawnInterval();
+    game.intervals.bullets.spawn = setInterval(
+      bulletsSpawnIntervalCallback,
+      game.bullets.spawnSpeed
+    );
   }
 };

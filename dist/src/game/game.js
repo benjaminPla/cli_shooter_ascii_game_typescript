@@ -9,7 +9,7 @@ const game = {
         spawnSpeed: 1000,
         spawnSpeedDowngrade: 250,
         spawnSpeedTrigger: 1,
-        speed: 200,
+        movementSpeed: 200,
         waveInterval: 60 * 1000,
         waveWarningTime: 6000,
     },
@@ -30,6 +30,15 @@ const game = {
         safeZonePercentage: 30,
     },
     frames: 30,
+    intervals: {
+        bullets: {
+            movement: undefined,
+            spawn: undefined,
+            waves: undefined,
+        },
+        main: undefined,
+        time: undefined,
+    },
     map: {
         height: 32,
         tiles: [],

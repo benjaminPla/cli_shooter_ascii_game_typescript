@@ -12,7 +12,7 @@ export interface IGame {
     spawnSpeed: number;
     spawnSpeedDowngrade: number;
     spawnSpeedTrigger: number;
-    speed: number;
+    movementSpeed: number;
     waveInterval: number;
     waveWarningTime: number;
   };
@@ -30,6 +30,15 @@ export interface IGame {
     safeZonePercentage: number;
   };
   frames: number;
+  intervals: {
+    bullets: {
+      movement?: NodeJS.Timeout;
+      spawn?: NodeJS.Timeout;
+      waves?: NodeJS.Timeout;
+    };
+    main?: NodeJS.Timeout;
+    time?: NodeJS.Timeout;
+  };
   map: {
     width: number;
     height: number;

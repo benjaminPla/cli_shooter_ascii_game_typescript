@@ -1,6 +1,12 @@
 import game from "./game";
 import { ICoordinates } from "../interfaces/game";
 import { safeZoneMapY } from "../utils/safeZone";
+import {
+  mainIntervalCallback,
+  bulletsMovementIntervalCallback,
+  bulletsSpawnIntervalCallback,
+  bulletsWavesIntervalCallback,
+} from "../intervals/intervals";
 
 export const createMap = (): void => {
   const tiles = [];
@@ -35,4 +41,24 @@ export const createBullet = (): void => {
   };
   // @ts-ignore
   game.bullets.items.push(newBullet);
+};
+
+export const intervalsSetup = (): void => {
+  game.intervals.main = setInterval(mainIntervalCallback, 1000 / game.frames);
+  game.intervals.time = setInterval(() => game.time++, 1000);
+
+  game.intervals.bullets.spawn = setInterval(
+    bulletsSpawnIntervalCallback,
+    game.bullets.spawnSpeed
+  );
+
+  game.intervals.bullets.movement = setInterval(
+    bulletsMovementIntervalCallback,
+    game.bullets.movementSpeed
+  );
+
+  game.intervals.bullets.waves = setInterval(
+    bulletsWavesIntervalCallback,
+    game.bullets.waveInterval
+  );
 };

@@ -7,6 +7,7 @@ exports.readlineSetup = exports.clearScreen = void 0;
 const game_1 = __importDefault(require("../game/game"));
 const readline_1 = __importDefault(require("readline"));
 const endGame_1 = require("../utils/endGame");
+// import { bulletsMovementSpeedIntervalCallback } from "../intervals/bullets";
 const clearScreen = () => {
     readline_1.default.cursorTo(process.stdout, 0, 0);
     readline_1.default.clearScreenDown(process.stdout);
@@ -18,6 +19,13 @@ const readlineSetup = () => {
         process.stdin.setRawMode(true);
     }
     process.stdin.on("keypress", (input, key) => {
+        // if (key.name === "k") {
+        // clearInterval(game.intervals.bullets.movementSpeed);
+        // game.intervals.bullets.movement = setInterval(
+        // bulletsMovementIntervalCallback,
+        // 1000
+        // );
+        // }
         if (key.name === game_1.default.controlls.exit) {
             (0, endGame_1.endGame)();
         }
