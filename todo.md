@@ -1,15 +1,15 @@
 - [x] **idea** spawn a row of bullets with some kind of draw
 - [x] add safe zone | where the food do not spawn
-- [] **idea** add trace of the bullet | trace before spawn and disappear
-- [] rename variables
-- [] improve modulized code | make it more intuitive
-- [] improve player movement
-- [] add big bullet
+- [ ] **idea** add trace of the bullet | trace before spawn and disappear
+- [x] rename variables
+- [x] improve modulized code | make it more intuitive
+- [ ] improve player movement
+- [ ] add big bullet
 - [x] control bullet movement speed
-- [] change game.bullets.speed in some level
-- [] add [start menu, info, credits, transitions]
+- [ ] change game.bullets.speed in some level
+- [ ] add [start menu, info, credits, transitions]
 - [x] add movements keys menu
-- [] add final boss
-- [] check map limits concistency
-- [] add odd game.map.width and game.map.height values when creating the map
-- [] modulize all intervals
+- [ ] add final boss
+- [x] check map limits concistency
+- [ ] add odd game.map.width and game.map.height values when creating the map to have a center
+- [x] modulize all intervals

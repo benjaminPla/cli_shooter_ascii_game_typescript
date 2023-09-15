@@ -59,7 +59,7 @@ const draw = (): void => {
   process.stdout.write(map.join("\n"));
   // process.stdout.write(
   // JSON.stringify({
-  // x: game.bullets.spawnSpeed,
+  // bulletsMovementSpeed: game.bullets.movementSpeed,
   // })
   // );
 };

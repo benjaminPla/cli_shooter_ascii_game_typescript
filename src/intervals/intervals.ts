@@ -4,6 +4,7 @@ import { eatFood } from "../mechanics/food";
 import { bulletHit } from "../mechanics/bullets";
 import { createBullet } from "../game/gameSetup";
 import { bulletsWave } from "../mechanics/bullets";
+// import { bulletsWave, bulletsSpeedChange } from "../mechanics/bullets";
 
 export const mainIntervalCallback = (): void => {
   draw();
@@ -27,5 +28,6 @@ export const bulletsSpawnIntervalCallback = (): void => {
 
 export const bulletsWavesIntervalCallback = (): void => {
   bulletsWave();
+  // bulletsSpeedChange();
   game.bullets.isWaveActive = true;
 };

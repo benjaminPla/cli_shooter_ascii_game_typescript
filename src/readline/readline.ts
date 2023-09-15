@@ -2,6 +2,9 @@ import game from "../game/game";
 import readline from "readline";
 import { endGame } from "../utils/endGame";
 
+import { bulletsMovementIntervalCallback } from "../intervals/intervals";
+// import { bulletsSpeedChange } from "../mechanics/bullets";
+
 export const clearScreen = () => {
   readline.cursorTo(process.stdout, 0, 0);
   readline.clearScreenDown(process.stdout);
@@ -14,6 +17,14 @@ export const readlineSetup = () => {
   }
 
   process.stdin.on("keypress", (_: any, key: any) => {
+    if (key.name === "k") {
+      clearInterval(game.intervals.bullets.movement);
+      // bulletsSpeedChange();
+      game.intervals.bullets.movement = setInterval(
+        bulletsMovementIntervalCallback,
+        100
+      );
+    }
     if (key.name === game.controlls.exit) {
       endGame();
     } else if (

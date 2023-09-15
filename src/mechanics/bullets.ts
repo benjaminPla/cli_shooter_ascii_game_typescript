@@ -39,3 +39,7 @@ export const bulletsWave = (): void => {
     game.bullets.isWaveActive = false;
   }, game.bullets.waveWarningTime);
 };
+
+// export const bulletsSpeedChange = (): void => {
+// game.bullets.movementSpeed = Math.floor(game.bullets.movementSpeed * 0.9);
+// };
