@@ -33,3 +33,9 @@ You can modify the gameplay elements in the `src/game/game.ts` config file:
 ## Under Construction
 
 Explore the `todo.md` file in the project root for ongoing development and planned enhancements.
+
+## Images
+
+![screenshoot_1](https://github.com/benjaminPla/ts_cli_game/assets/85419447/987afcc1-3301-4de3-8565-ab630d53a3dc)
+
+![screenshoot_2](https://github.com/benjaminPla/ts_cli_game/assets/85419447/66734d4c-18cf-416b-b72c-7c422c4f698b)
